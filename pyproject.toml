@@ -1,5 +1,5 @@
 [project]
-name = "mcp_servers"
+name = "Mcp"
 version = "0.0.1-alpha.0"
 description = "The official Python library for the mcp-servers API"
 dynamic = ["readme"]
