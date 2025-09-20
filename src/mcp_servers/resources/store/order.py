@@ -8,7 +8,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..._types import NOT_GIVEN, Body, Query, Headers, NoneType, NotGiven
+from ..._types import Body, Omit, Query, Headers, NoneType, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -32,7 +32,7 @@ class OrderResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/mcp-servers-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/canfieldjuan/Stainless-SDK#accessing-raw-response-data-eg-headers
         """
         return OrderResourceWithRawResponse(self)
 
@@ -41,25 +41,25 @@ class OrderResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/mcp-servers-python#with_streaming_response
+        For more information, see https://www.github.com/canfieldjuan/Stainless-SDK#with_streaming_response
         """
         return OrderResourceWithStreamingResponse(self)
 
     def create(
         self,
         *,
-        id: int | NotGiven = NOT_GIVEN,
-        complete: bool | NotGiven = NOT_GIVEN,
-        pet_id: int | NotGiven = NOT_GIVEN,
-        quantity: int | NotGiven = NOT_GIVEN,
-        ship_date: Union[str, datetime] | NotGiven = NOT_GIVEN,
-        status: Literal["placed", "approved", "delivered"] | NotGiven = NOT_GIVEN,
+        id: int | Omit = omit,
+        complete: bool | Omit = omit,
+        pet_id: int | Omit = omit,
+        quantity: int | Omit = omit,
+        ship_date: Union[str, datetime] | Omit = omit,
+        status: Literal["placed", "approved", "delivered"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Order:
         """
         Place a new order in the store
@@ -103,7 +103,7 @@ class OrderResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Order:
         """For valid response try integer IDs with value <= 5 or > 10.
 
@@ -136,7 +136,7 @@ class OrderResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> None:
         """For valid response try integer IDs with value < 1000.
 
@@ -169,7 +169,7 @@ class AsyncOrderResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/mcp-servers-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/canfieldjuan/Stainless-SDK#accessing-raw-response-data-eg-headers
         """
         return AsyncOrderResourceWithRawResponse(self)
 
@@ -178,25 +178,25 @@ class AsyncOrderResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/mcp-servers-python#with_streaming_response
+        For more information, see https://www.github.com/canfieldjuan/Stainless-SDK#with_streaming_response
         """
         return AsyncOrderResourceWithStreamingResponse(self)
 
     async def create(
         self,
         *,
-        id: int | NotGiven = NOT_GIVEN,
-        complete: bool | NotGiven = NOT_GIVEN,
-        pet_id: int | NotGiven = NOT_GIVEN,
-        quantity: int | NotGiven = NOT_GIVEN,
-        ship_date: Union[str, datetime] | NotGiven = NOT_GIVEN,
-        status: Literal["placed", "approved", "delivered"] | NotGiven = NOT_GIVEN,
+        id: int | Omit = omit,
+        complete: bool | Omit = omit,
+        pet_id: int | Omit = omit,
+        quantity: int | Omit = omit,
+        ship_date: Union[str, datetime] | Omit = omit,
+        status: Literal["placed", "approved", "delivered"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Order:
         """
         Place a new order in the store
@@ -240,7 +240,7 @@ class AsyncOrderResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Order:
         """For valid response try integer IDs with value <= 5 or > 10.
 
@@ -273,7 +273,7 @@ class AsyncOrderResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> None:
         """For valid response try integer IDs with value < 1000.
 
